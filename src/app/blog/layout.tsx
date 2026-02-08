@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Maastricht student job guides for 2026: English-friendly part-time jobs, pay, contracts, permits, CV tips, and where to apply fast.",
   alternates: { canonical: CANONICAL },
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true },  
   openGraph: {
     title: "Maastricht Student Jobs Blog (2026) | Student Jobs Maastricht",
     description:
