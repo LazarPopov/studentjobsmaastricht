@@ -1,8 +1,8 @@
-// src/data/jobs.ts
+﻿// src/data/jobs.ts
 // Central job data + helpers (Maastricht). Auto-builds `shortDescrition` to include per-gig/per-sale amount + a concise text from `descriptionHtml`.
 // Also adds a place for a per-listing logo (logoUrl/logoAlt).
 
-// src/data/jobs.ts — add an external URL for outbound clicks
+// src/data/jobs.ts â€” add an external URL for outbound clicks
 export type Employment =
   | "PART_TIME"
   | "FULL_TIME"
@@ -35,7 +35,6 @@ export type JobRecord = {
   categories: ("delivery" | "sales" | "hospitality" | "retail" | "tutoring" | "events" | "fieldwork")[];
   featured?: boolean;
 
-  // NEW: clicking the card can go to this website if provided
   externalUrl?: string;
 
   // existing logo fields (already added earlier)
@@ -62,11 +61,11 @@ function stripHtml(html: string): string {
 function firstSentence(text: string, maxLen = 180): string {
   const dot = text.indexOf(".");
   if (dot !== -1 && dot < maxLen) return text.slice(0, dot + 1);
-  return text.length > maxLen ? text.slice(0, maxLen - 1) + "…" : text;
+  return text.length > maxLen ? text.slice(0, maxLen - 1) + "â€¦" : text;
 }
 
 function money(n?: number) {
-  return typeof n === "number" && n > 0 ? `€${n.toString()}` : null;
+  return typeof n === "number" && n > 0 ? `â‚¬${n.toString()}` : null;
 }
 
 function makeShortDescription(job: Partial<JobRecord>): string {
@@ -88,7 +87,7 @@ function makeShortDescription(job: Partial<JobRecord>): string {
   const desc = firstSentence(stripHtml(job.descriptionHtml || ""));
   if (desc) parts.push(desc);
 
-  return parts.join(" — ");
+  return parts.join(" â€” ");
 }
 
 // ---- Define raw jobs (without shortDescrition), then map to final JOBS with computed shortDescrition ----
@@ -115,8 +114,8 @@ const RAW_JOBS: RawJob[] = [
     "</ul>" +
     "<h3>Time and compensation</h3>" +
     "<ul>" +
-    "<li><strong>Per viewing</strong>: typically <strong>€20 to €40</strong>, and most viewings take <strong>up to 30 minutes</strong> on site (plus travel).</li>" +
-    "<li><strong>Per room result</strong>: <strong>€200</strong> flat per room listing or match, with opportunities <strong>up to €300</strong> for a successful takeover, depending on the deal.</li>" +
+    "<li><strong>Per viewing</strong>: typically <strong>â‚¬20 to â‚¬40</strong>, and most viewings take <strong>up to 30 minutes</strong> on site (plus travel).</li>" +
+    "<li><strong>Per room result</strong>: <strong>â‚¬200</strong> flat per room listing or match, with opportunities <strong>up to â‚¬300</strong> for a successful takeover, depending on the deal.</li>" +
     "<li><strong>Flexible schedule</strong>: take tasks when you want, scale up during busy periods.</li>" +
     "</ul>" +
     "<h3>Who this is for</h3>" +
@@ -125,7 +124,7 @@ const RAW_JOBS: RawJob[] = [
     "<li>Comfortable walking into viewings and asking direct questions</li>" +
     "<li>English friendly, international students welcome</li>" +
     "</ul>" +
-    "<p><strong>How to apply:</strong> Send a message via the contact form on our website. Write <strong>“Domakin for the win”</strong> and include your email. We will reach out to schedule a short interview.</p>" +
+    "<p><strong>How to apply:</strong> Send a message via the contact form on our website. Write <strong>â€œDomakin for the winâ€</strong> and include your email. We will reach out to schedule a short interview.</p>" +
     "<p><strong>Do work that matters.</strong> Every viewing and every verified room can be the difference between a student having a home, or being stuck for months.</p>",
   employmentType: "PART_TIME",
   currency: "EUR",
@@ -133,16 +132,16 @@ const RAW_JOBS: RawJob[] = [
   area: "All around the Netherlands",
   englishFriendly: true,
   workHours: "6 to 20 h/week, flexible",
-  datePosted: new Date().toISOString().slice(0, 10),
+  datePosted: "2026/02/14",
   validThrough: "2026-12-31",
   categories: ["sales", "fieldwork"],
   featured: true,
 
   // Commission style fields (clearer than hourly for this role)
   perGigAmount: 30,
-  perGigAmountText: "€20 to €40 per remote viewing (avg. up to 30 min on site)",
+  perGigAmountText: "â‚¬20 to â‚¬40 per remote viewing (avg. up to 30 min on site)",
   perSaleAmount: 300,
-  perSaleAmountText: "€200 per room listing or match, up to €300 for a successful takeover",
+  perSaleAmountText: "â‚¬200 per room listing or match, up to â‚¬300 for a successful takeover",
 
   logoUrl: "/logos/domakin.png",
   logoAlt: "Domakin logo",
@@ -180,8 +179,8 @@ const RAW_JOBS: RawJob[] = [
   addressLocality: "Maastricht",
   area: "Online tutoring",
   englishFriendly: true,
-  workHours: "1–20 h/week",
-  datePosted: new Date().toISOString().slice(0, 10),
+  workHours: "1â€“20 h/week",
+  datePosted: "2026/02/14",
   validThrough: "2026-12-31",
   categories: ["tutoring"],
   featured: true,
@@ -195,7 +194,7 @@ const RAW_JOBS: RawJob[] = [
   //   orgName: "Pepperminds",
   
   //   descriptionHtml:
-  //    "<p><strong>DUTCH REUQIRED! Earn €150 per shift</strong> as part of <a href=\"https://www.pepperminds.nl/makeithappen/?mkt=4930&recruitmentsource=Through_pepper\" target=\"_blank\" rel=\"noopener noreferrer\">Pepperminds’ door-to-door team</a> door-to-door team in Maastricht. We mix the <em>personal touch in a digital era</em> with energy, coaching, and paid training so you can grow fast and earn even faster.</p><ul><li><strong> Dutch is not required</strong>, and you can even receive DUO… if you work enough hours of course 😉</li><li><strong>The better you are, the more you earn!</strong> You start as a rookie, grow into a promoter, and can become a captain — with performance bonuses reaching up to <strong>€500 a day!</strong></li><li><strong>Learn real sales</strong> — your colleagues are students from all kinds of backgrounds, and together you’ll master the most versatile skill out there: sales!</li><li><strong>Challenge yourself</strong> — every day is different, full of teamwork, laughter, and growth.</li><li><strong>After work culture</strong> — we even have our own bar where the team celebrates wins and unwinds together!</li></ul><p>Ready to test your limits, make friends, and earn like a pro? <strong>Join the crew and start this week!</strong></p>",    baseSalaryMin: 12,
+  //    "<p><strong>DUTCH REUQIRED! Earn â‚¬150 per shift</strong> as part of <a href=\"https://www.pepperminds.nl/makeithappen/?mkt=4930&recruitmentsource=Through_pepper\" target=\"_blank\" rel=\"noopener noreferrer\">Peppermindsâ€™ door-to-door team</a> door-to-door team in Maastricht. We mix the <em>personal touch in a digital era</em> with energy, coaching, and paid training so you can grow fast and earn even faster.</p><ul><li><strong> Dutch is not required</strong>, and you can even receive DUOâ€¦ if you work enough hours of course ðŸ˜‰</li><li><strong>The better you are, the more you earn!</strong> You start as a rookie, grow into a promoter, and can become a captain â€” with performance bonuses reaching up to <strong>â‚¬500 a day!</strong></li><li><strong>Learn real sales</strong> â€” your colleagues are students from all kinds of backgrounds, and together youâ€™ll master the most versatile skill out there: sales!</li><li><strong>Challenge yourself</strong> â€” every day is different, full of teamwork, laughter, and growth.</li><li><strong>After work culture</strong> â€” we even have our own bar where the team celebrates wins and unwinds together!</li></ul><p>Ready to test your limits, make friends, and earn like a pro? <strong>Join the crew and start this week!</strong></p>",    baseSalaryMin: 12,
   //   employmentType: "PART_TIME",
   //   baseSalaryMax: 20,
   //   DUO: true,
@@ -204,13 +203,13 @@ const RAW_JOBS: RawJob[] = [
   //   addressLocality: "Maastricht",
   //   area: "Various districts",
   //   englishFriendly: false,
-  //   workHours: "10–20 h/week",
-  //   datePosted: new Date().toISOString().slice(0, 10),
+  //   workHours: "10â€“20 h/week",
+  //   datePosted: "2026/02/14",
   //   validThrough: "2026-12-31",
   //   categories: ["sales", "fieldwork"],
   //   featured: false,
   //   // unknown numeric commission -> use text fallback
-  //   perSaleAmountText: "150 еuros per shift",
+  //   perSaleAmountText: "150 Ðµuros per shift",
   //   logoUrl: "/logos/pepperminds.jpeg",
   //   logoAlt: "Pepperminds logo",
   //   // externalUrl: "https://www.pepperminds.nl/makeithappen/?mkt=LZ&utm_source=viavia&utm_medium=crewapp&utm_campaign=makeithappen",
@@ -222,7 +221,7 @@ const RAW_JOBS: RawJob[] = [
   orgName: "Pepperminds",
 
   descriptionHtml:
-   "<p><strong>Verdien €150 per shift</strong> als onderdeel van het <a href=\"https://www.pepperminds.nl/makeithappen/?mkt=4930&recruitmentsource=Through_pepper\" target=\"_blank\" rel=\"noopener noreferrer\">Pepperminds door-to-door team</a> in Maastricht. Wij combineren de <em>persoonlijke touch in een digitaal tijdperk</em> met energie, coaching en betaalde trainingen zodat jij snel kunt groeien én snel kunt verdienen.</p><ul><li>, en je kunt zelfs DUO ontvangen als je genoeg uren werkt 😉</li><li><strong>Hoe beter je presteert, hoe meer je verdient!</strong> Je start als rookie, groeit door tot promoter en kunt captain worden met bonussen tot <strong>€500 per dag!</strong></li><li><strong>Leer echte sales</strong> samen met ambitieuze studenten uit allerlei achtergronden.</li><li><strong>Daag jezelf uit</strong> elke werkdag is anders, vol teamwork en groei.</li><li><strong>After work cultuur</strong> we hebben zelfs een eigen bar om successen te vieren.</li></ul><p>Klaar om je grenzen te verleggen, vrienden te maken en goed te verdienen? <strong>Start deze week nog!</strong></p>",
+   "<p><strong>Verdien â‚¬150 per shift</strong> als onderdeel van het <a href=\"https://www.pepperminds.nl/makeithappen/?mkt=4930&recruitmentsource=Through_pepper\" target=\"_blank\" rel=\"noopener noreferrer\">Pepperminds door-to-door team</a> in Maastricht. Wij combineren de <em>persoonlijke touch in een digitaal tijdperk</em> met energie, coaching en betaalde trainingen zodat jij snel kunt groeien Ã©n snel kunt verdienen.</p><ul><li>, en je kunt zelfs DUO ontvangen als je genoeg uren werkt ðŸ˜‰</li><li><strong>Hoe beter je presteert, hoe meer je verdient!</strong> Je start als rookie, groeit door tot promoter en kunt captain worden met bonussen tot <strong>â‚¬500 per dag!</strong></li><li><strong>Leer echte sales</strong> samen met ambitieuze studenten uit allerlei achtergronden.</li><li><strong>Daag jezelf uit</strong> elke werkdag is anders, vol teamwork en groei.</li><li><strong>After work cultuur</strong> we hebben zelfs een eigen bar om successen te vieren.</li></ul><p>Klaar om je grenzen te verleggen, vrienden te maken en goed te verdienen? <strong>Start deze week nog!</strong></p>",
   baseSalaryMin: 12,
   employmentType: "PART_TIME",
   baseSalaryMax: 20,
@@ -232,12 +231,12 @@ const RAW_JOBS: RawJob[] = [
   addressLocality: "Maastricht",
   area: "Verschillende wijken",
   englishFriendly: false,
-  workHours: "10–20 uur per week",
-  datePosted: new Date().toISOString().slice(0, 10),
+  workHours: "10â€“20 uur per week",
+  datePosted: "2026/02/14",
   validThrough: "2026-12-31",
   categories: ["sales", "fieldwork"],
   featured: true,
-  perSaleAmountText: "€150 per shift",
+  perSaleAmountText: "â‚¬150 per shift",
   logoUrl: "/logos/pepperminds.jpeg",
   logoAlt: "Pepperminds logo",
 },
@@ -246,7 +245,7 @@ const RAW_JOBS: RawJob[] = [
   slug: "thuisbezorgd-takeaway-courier-netherlands",
   title: "Food Delivery",
   orgName: "Thuisbezorgd.nl",
-descriptionHtml: "<p><strong>Are you tired of endless study sessions and sitting behind your laptop all day?</strong> This job is your perfect excuse to get outside, stay active, and earn solid money while exploring your city! Join <strong>Thuisbezorgd.nl</strong> as a Food Delivery Courier — hop on your bike, scooter, or car, and deliver happiness (and food) straight to hungry customers.</p><ul><li><strong>Flexible schedule</strong> — choose your own working hours so you can balance lectures, gym time, and parties 🍕🚴‍♂️</li><li><strong>Reliable income</strong> — hourly pay + tips + bonuses (and yes, rainy-day deliveries pay even better 😉)</li><li><strong>DUO-friendly</strong> — work enough hours and you can qualify for <strong>study financing (DUO)</strong> while keeping your freedom!</li><li><strong>Requirements</strong> — smartphone with data and your own bike, scooter, or car</li><li><strong>Perfect for students</strong> — stay fit, meet people, and make money on your own schedule</li></ul><p>Ready to swap your desk for the open road? <strong>Join Thuisbezorgd.nl and start earning this week!</strong></p>",  employmentType: "PART_TIME",
+descriptionHtml: "<p><strong>Are you tired of endless study sessions and sitting behind your laptop all day?</strong> This job is your perfect excuse to get outside, stay active, and earn solid money while exploring your city! Join <strong>Thuisbezorgd.nl</strong> as a Food Delivery Courier â€” hop on your bike, scooter, or car, and deliver happiness (and food) straight to hungry customers.</p><ul><li><strong>Flexible schedule</strong> â€” choose your own working hours so you can balance lectures, gym time, and parties ðŸ•ðŸš´â€â™‚ï¸</li><li><strong>Reliable income</strong> â€” hourly pay + tips + bonuses (and yes, rainy-day deliveries pay even better ðŸ˜‰)</li><li><strong>DUO-friendly</strong> â€” work enough hours and you can qualify for <strong>study financing (DUO)</strong> while keeping your freedom!</li><li><strong>Requirements</strong> â€” smartphone with data and your own bike, scooter, or car</li><li><strong>Perfect for students</strong> â€” stay fit, meet people, and make money on your own schedule</li></ul><p>Ready to swap your desk for the open road? <strong>Join Thuisbezorgd.nl and start earning this week!</strong></p>",  employmentType: "PART_TIME",
   baseSalaryMin: 12,
   baseSalaryMax: 15,
   DUO: true,
@@ -255,8 +254,8 @@ descriptionHtml: "<p><strong>Are you tired of endless study sessions and sitting
   addressLocality: "Maastricht",
   area: "Citywide / Multiple cities",
   englishFriendly: true,
-  workHours: "Flexible shifts, 6–30 h/week",
-  datePosted: new Date().toISOString().slice(0, 10),
+  workHours: "Flexible shifts, 6â€“30 h/week",
+  datePosted: "2026/02/14",
   validThrough: "2026-12-31",
   categories: ["delivery", "fieldwork"],
   featured: true,
@@ -271,7 +270,7 @@ slug: "uber-eats-courier-maastricht",
 title: "Uber Eats Courier",
 orgName: "Uber",
 descriptionHtml:
-"<p><strong>Earn on your own schedule</strong> delivering with the Uber app in Maastricht. Be your own boss, choose when you work, and track your earnings in real time.</p><p><strong>Limited-time promo:</strong> <strong>Receive an extra €750</strong> after you sign up and complete <strong>50 trips within 90 days</strong>. *Eligibility applies; see additional terms on Uber’s site.</p><ul><li><strong>Flexible hours</strong> — ride when it suits you (great alongside studies or another job).</li><li><strong>Fast onboarding</strong> — easy sign-up and start delivering once you’re approved.</li><li><strong>Real-time earnings</strong> — see trip totals live and cash out with available payout options.</li><li><strong>Multiple modes</strong> — deliver by bike, scooter, or car (requirements vary by city).</li><li><strong>Refer & earn</strong> — invite friends to drive or deliver and earn once they complete trips.</li></ul><p><strong>Join today</strong> and start delivering in Maastricht — the city’s always moving.</p>",
+"<p><strong>Earn on your own schedule</strong> delivering with the Uber app in Maastricht. Be your own boss, choose when you work, and track your earnings in real time.</p><p><strong>Limited-time promo:</strong> <strong>Receive an extra â‚¬750</strong> after you sign up and complete <strong>50 trips within 90 days</strong>. *Eligibility applies; see additional terms on Uberâ€™s site.</p><ul><li><strong>Flexible hours</strong> â€” ride when it suits you (great alongside studies or another job).</li><li><strong>Fast onboarding</strong> â€” easy sign-up and start delivering once youâ€™re approved.</li><li><strong>Real-time earnings</strong> â€” see trip totals live and cash out with available payout options.</li><li><strong>Multiple modes</strong> â€” deliver by bike, scooter, or car (requirements vary by city).</li><li><strong>Refer & earn</strong> â€” invite friends to drive or deliver and earn once they complete trips.</li></ul><p><strong>Join today</strong> and start delivering in Maastricht â€” the cityâ€™s always moving.</p>",
 baseSalaryMin: 12,
 employmentType: "PART_TIME",
 baseSalaryMax: 25,
@@ -281,12 +280,12 @@ payUnit: "HOUR",
 addressLocality: "Maastricht",
 area: "Maastricht & nearby districts",
 englishFriendly: true,
-workHours: "Flexible — you choose",
-datePosted: new Date().toISOString().slice(0, 10),
+workHours: "Flexible â€” you choose",
+datePosted: "2026/02/14",
 validThrough: "2026-12-31",
 categories: ["delivery"],
 featured: false,
-perSaleAmountText: "€750 sign-up reward after 50 trips (within 90 days; terms apply)",
+perSaleAmountText: "â‚¬750 sign-up reward after 50 trips (within 90 days; terms apply)",
 logoUrl: "/logos/uber.png",
 logoAlt: "Uber logo",
 // externalUrl: "https://www.uber.com/signup/drive/deliver/?invite_code=a6cpc37",
@@ -309,7 +308,7 @@ const NEW_JOBS: RawJob[] = [
     payUnit: "HOUR",
     addressLocality: "Maastricht",
     workHours: "16 to 40 h/week",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["delivery"],
     externalUrl: "https://jobs.picnic.app/en/vacancies/delivery-driver-nl",
@@ -324,7 +323,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Flexible store shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://werk.ah.nl/vacature/12051/medewerker-allround-5",
@@ -338,7 +337,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Flexible",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://werk.ah.nl/en/vacancy/38370/stock-associate-60",
@@ -352,7 +351,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Part time",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://careers.primark.com/en/location/maastricht-jobs/8171/2750405-2749879-2759794/4",
@@ -366,7 +365,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Store shifts, typically evenings and weekends",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://www.werkenbijdecathlon.nl/vacatures/verkoopmedewerker-maastricht-5654553",
@@ -380,7 +379,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Flexible",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["hospitality"],
     externalUrl: "https://www.werkenbijalbron.nl/vacatures/barista-coffeecompany-maastricht-oost-maastricht-1129740",
@@ -394,7 +393,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Day shifts, usually no late evenings",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["hospitality"],
     externalUrl: "https://www.werkenbijbagelsbeans.nl/",
@@ -411,7 +410,7 @@ const NEW_JOBS: RawJob[] = [
     payUnit: "HOUR",
     addressLocality: "Maastricht",
     workHours: "Shifts, weekend availability commonly requested",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["hospitality"],
     externalUrl: "https://nl.indeed.com/q-barista-starbucks-l-maastricht-vacatures.html",
@@ -421,14 +420,14 @@ const NEW_JOBS: RawJob[] = [
     title: "Sales Promotor at RAI (Maastricht)",
     orgName: "YoungCapital (RAI assignment)",
     descriptionHtml:
-      "<p>Demonstrate products on the RAI floor and engage visitors. Listed pay is €15 per hour.</p>",
+      "<p>Demonstrate products on the RAI floor and engage visitors. Listed pay is â‚¬15 per hour.</p>",
     employmentType: "PART_TIME",
     baseSalaryMin: 15.0,
     currency: "EUR",
     payUnit: "HOUR",
     addressLocality: "Maastricht",
     workHours: "32 to 40 h/week",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["sales", "events"],
     externalUrl: "https://www.youngcapital.nl/vacatures/5701070-fulltime-sales-promotor-in-maastricht-15-p-u",
@@ -442,7 +441,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "TEMPORARY",
     addressLocality: "Maastricht",
     workHours: "2 to 5 events per month, about 4.5 hours per event",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["events"],
     externalUrl: "https://www.randstad.nl/werknemers/vacatures/topwerkgevers/johan-cruijff-arena",
@@ -452,14 +451,14 @@ const NEW_JOBS: RawJob[] = [
     title: "PAL voor de Klas (Teaching Assistant) via UvA and VU",
     orgName: "PAL voor de Klas",
     descriptionHtml:
-      "<p>Support teachers at a secondary school: assist in class, help with tutoring and materials. About 8 hours per week, pay mentioned as at least €11 per hour.</p>",
+      "<p>Support teachers at a secondary school: assist in class, help with tutoring and materials. About 8 hours per week, pay mentioned as at least â‚¬11 per hour.</p>",
     employmentType: "PART_TIME",
     baseSalaryMin: 11.0,
     currency: "EUR",
     payUnit: "HOUR",
     addressLocality: "Maastricht",
     workHours: "About 8 h/week (minimum availability typically 4 h/week)",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["tutoring"],
     externalUrl: "https://student.uva.nl/informatie/assisteren-bij-onderwijs",
@@ -473,7 +472,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "TEMPORARY",
     addressLocality: "Maastricht",
     workHours: "Event based shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["events", "hospitality"],
     externalUrl: "https://careers.rai.nl/departments/flex",
@@ -488,7 +487,7 @@ const NEW_JOBS: RawJob[] = [
     addressLocality: "Maastricht",
     area: "Herculeshof",
     workHours: "16 to 32 h/week",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl:
@@ -497,15 +496,15 @@ const NEW_JOBS: RawJob[] = [
 
   {
     slug: "gamma-bijbaan-verkoopmedewerker-maastricht-belvedere-Maastricht",
-    title: "GAMMA Bijbaan Verkoopmedewerker (Maastricht Belvédère, 3 to 12 h/week)",
+    title: "GAMMA Bijbaan Verkoopmedewerker (Maastricht BelvÃ©dÃ¨re, 3 to 12 h/week)",
     orgName: "GAMMA",
     descriptionHtml:
       "<p>DIY store assistant job: help customers, learn products, keep aisles tidy, and support the team. Flexible availability, evenings and weekends. Dutch required.</p>",
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
-    area: "Maastricht Belvédère",
+    area: "Maastricht BelvÃ©dÃ¨re",
     workHours: "3 to 12 h/week",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-04-07",
     categories: ["retail"],
     externalUrl: "https://www.werkenbijgamma.nl/vacature/14961/bijbaan-verkoopmedewerker-116",
@@ -524,7 +523,7 @@ const NEW_JOBS: RawJob[] = [
     payUnit: "HOUR",
     addressLocality: "Maastricht",
     workHours: "Flexible",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://www.werkenbijlidl.nl/supermarkt/bijbaan",
@@ -539,7 +538,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Varies by store",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://www.werkenbijhema.nl/",
@@ -554,7 +553,7 @@ const NEW_JOBS: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Store shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://careers.primark.com/nl",
@@ -573,7 +572,7 @@ const NEW_JOBS2: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Shifts (part time)",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["hospitality"],
     externalUrl: "https://careers.kfc.nl/vacatures/horecamedewerker/kfc-maastricht/80574",
@@ -584,7 +583,7 @@ const NEW_JOBS2: RawJob[] = [
     title: "Bastion Hotels Supervisor Housekeeping (Maastricht, 30 to 38 h/week)",
     orgName: "Bastion Hotels",
     descriptionHtml:
-      "<p>Lead the housekeeping team, plan daily operations, and quality-check rooms and public areas. Listed starting salary is €2364.04 gross per month based on a 38 hour week, plus allowances.</p>",
+      "<p>Lead the housekeeping team, plan daily operations, and quality-check rooms and public areas. Listed starting salary is â‚¬2364.04 gross per month based on a 38 hour week, plus allowances.</p>",
     employmentType: "PART_TIME",
     baseSalaryMin: 2364.04,
     baseSalaryMax: 2364.04,
@@ -592,7 +591,7 @@ const NEW_JOBS2: RawJob[] = [
     payUnit: "MONTH",
     addressLocality: "Maastricht",
     workHours: "30 to 38 h/week",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["hospitality"],
     externalUrl:
@@ -612,7 +611,7 @@ const NEW_JOBS3: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Flexible evening and weekend shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://www.werkenbijjumbo.nl/vacatures",
@@ -627,7 +626,7 @@ const NEW_JOBS3: RawJob[] = [
     addressLocality: "Maastricht",
     englishFriendly: true,
     workHours: "Flexible shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["delivery"],
     externalUrl: "https://www.justeattakeaway.com/careers/jobs",
@@ -641,7 +640,7 @@ const NEW_JOBS3: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Evenings and weekends",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["delivery", "hospitality"],
     externalUrl: "https://www.werkenbijdominos.nl/vacatures",
@@ -655,7 +654,7 @@ const NEW_JOBS3: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Flexible store shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://werkenbij.action.com/nl/vacatures",
@@ -675,7 +674,7 @@ const NEW_JOBS4: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Evening and weekend shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["hospitality", "events"],
     externalUrl: "https://www.werkenbijvue.nl/vacatures",
@@ -689,7 +688,7 @@ const NEW_JOBS4: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "Part time retail shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["retail"],
     externalUrl: "https://www.werkenbijsacha.nl/vacatures",
@@ -703,7 +702,7 @@ const NEW_JOBS4: RawJob[] = [
     employmentType: "PART_TIME",
     addressLocality: "Maastricht",
     workHours: "On call, flexible",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["fieldwork"],
     externalUrl: "https://www.studentchauffeurs.nl/vacatures",
@@ -718,7 +717,7 @@ const NEW_JOBS4: RawJob[] = [
     addressLocality: "Maastricht",
     englishFriendly: true,
     workHours: "Shifts",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["fieldwork"],
     externalUrl: "https://www.asatalent.nl/vacatures",
@@ -733,7 +732,7 @@ const NEW_JOBS4: RawJob[] = [
     addressLocality: "Maastricht",
     englishFriendly: true,
     workHours: "Flexible student schedule",
-    datePosted: new Date().toISOString().slice(0, 10),
+    datePosted: "2026/02/14",
     validThrough: "2026-12-31",
     categories: ["sales", "events"],
     externalUrl: "https://jobs.redbull.com/nl-nl",
@@ -759,5 +758,6 @@ export function listJobs() {
 export function listFeaturedJobs() {
   return JOBS.filter((j) => j.featured);
 }
+
 
 
