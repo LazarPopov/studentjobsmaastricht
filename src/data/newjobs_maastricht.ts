@@ -22,7 +22,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "events"
     ],
-    "externalUrl": "https://www.interum.eu/vacatures/steward-37351"
+    "externalUrl": "https://www.interum.eu/vacatures/steward-37351",
+    "validThrough": "2026-03-01"
   },
   {
     "slug": "interum-admin-equivalentie-2026-01",
@@ -43,7 +44,8 @@ export const NEW_JOBS: RawJob[] = [
     "externalUrl": "https://www.interum.eu/vacatures/administratief-medewerker-gpa-37232",
     "categories": [
       "retail"
-    ]
+    ],
+    "validThrough": "2026-02-19"
   },
   {
     "slug": "jumbo-vakkenvuller-brusselsepoort-2026-02",
@@ -64,7 +66,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "retail"
     ],
-    "externalUrl": "https://nl.jobs.jumbo.com/nl/vacature/bijbaan-vakkenvuller/1085415/"
+    "externalUrl": "https://nl.jobs.jumbo.com/nl/vacature/bijbaan-vakkenvuller/1085415/",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "jumbo-kassamedewerker-brusselsepoort-2026-02",
@@ -85,7 +88,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "retail"
     ],
-    "externalUrl": "https://nl.jobs.jumbo.com/nl/vacature/bijbaan-kassamedewerker/1021674/"
+    "externalUrl": "https://nl.jobs.jumbo.com/nl/vacature/bijbaan-kassamedewerker/1021674/",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "thuisbezorgd-courier-maastricht-2026-02",
@@ -102,7 +106,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "delivery"
     ],
-    "externalUrl": "https://www.thuisbezorgd.nl/bezorger/maastricht"
+    "externalUrl": "https://www.thuisbezorgd.nl/bezorger/maastricht",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "coffeelovers-barista-plein1992-2026-02",
@@ -119,7 +124,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "hospitality"
     ],
-    "externalUrl": "https://www.coffeelovers.nl/en/work/"
+    "externalUrl": "https://www.coffeelovers.nl/en/work/",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "hema-horeca-station-2026-02",
@@ -136,7 +142,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "hospitality"
     ],
-    "externalUrl": "https://jobs.hema.com/nl/vacatures/horecamedewerker-bijbaan-384151"
+    "externalUrl": "https://jobs.hema.com/nl/vacatures/horecamedewerker-bijbaan-384151",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "ah-bezorger-indeed-2026-02",
@@ -157,7 +164,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "delivery"
     ],
-    "externalUrl": "https://nl.indeed.com/q-bij-albert-heijn-l-maastricht-vacatures.html"
+    "externalUrl": "https://nl.indeed.com/q-bij-albert-heijn-l-maastricht-vacatures.html",
+    "validThrough": "2026-03-13"
   },
   {
     "slug": "starbucks-barista-maastricht-20260215",
@@ -177,7 +185,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "hospitality"
     ],
-    "externalUrl": "https://starbucks.easycruit.com/vacancy/775795?ISO=fr"
+    "externalUrl": "https://starbucks.easycruit.com/vacancy/775795?ISO=fr",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "rituals-oproepkracht-bijenkorf-maastricht-20260215",
@@ -193,7 +202,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "retail"
     ],
-    "externalUrl": "https://careers.rituals.com/nl-NL/jobs/winkelmedewerker-oproepkracht-de-bijenkorf-maastricht/ee6915d1-dccc-4ef9-8fd1-beea14353488/"
+    "externalUrl": "https://careers.rituals.com/nl-NL/jobs/winkelmedewerker-oproepkracht-de-bijenkorf-maastricht/ee6915d1-dccc-4ef9-8fd1-beea14353488/",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "dominos-fietsbezorger-hoenderstraat-20260215",
@@ -209,7 +219,8 @@ export const NEW_JOBS: RawJob[] = [
     "englishFriendly": true,
     "workHours": "Avonden en weekenden in overleg",
     "datePosted": "2026-02-15",
-    "externalUrl": "https://www.werkenbijdominos.nl/vacature/fietsbezorger-maastricht-hoenderstraat-0"
+    "externalUrl": "https://www.werkenbijdominos.nl/vacature/fietsbezorger-maastricht-hoenderstraat-0",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "kruidvat-verkoopmedewerker-bijbaan-malbergsingel-20260215",
@@ -231,7 +242,8 @@ export const NEW_JOBS: RawJob[] = [
     "englishFriendly": false,
     "workHours": "Flexibel, ook avonden/weekenden",
     "datePosted": "2026-02-15",
-    "externalUrl": "https://www.werkenbijkruidvat.nl/vacatures/verkoopmedewerker-bijbaan-e199527"
+    "externalUrl": "https://www.werkenbijkruidvat.nl/vacatures/verkoopmedewerker-bijbaan-e199527",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "um-dei-office-student-assistant-20260215",
@@ -247,7 +259,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "events"
     ],
-    "externalUrl": "https://www.maastrichtuniversity.nl/nl/over-de-um/diversiteit-inclusiviteit/over-ons/vacature-student-assistent"
+    "externalUrl": "https://www.maastrichtuniversity.nl/nl/over-de-um/diversiteit-inclusiviteit/over-ons/vacature-student-assistent",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "um-alumni-office-studentmedewerker-20260215",
@@ -263,7 +276,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "events"
     ],
-    "externalUrl": "https://www.maastrichtuniversity.nl/nl/vacature-student"
+    "externalUrl": "https://www.maastrichtuniversity.nl/nl/vacature-student",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "gemeente-maastricht-ido-medewerker-20260202",
@@ -301,7 +315,8 @@ export const NEW_JOBS: RawJob[] = [
       "hospitality",
       "events"
     ],
-    "externalUrl": "https://magnet.me/nl-NL/vacature/928901/community-host-intern"
+    "externalUrl": "https://magnet.me/nl-NL/vacature/928901/community-host-intern",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "mcdonalds-maastricht-vrijthof-horecamedewerker-bijbaan",
@@ -319,7 +334,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "hospitality"
     ],
-    "externalUrl": "https://www.werkenbijmcdonalds.nl/vacatures/horecamedewerker-maastricht-95566e8a-ae87-45ef-bfd1-87198f79a543"
+    "externalUrl": "https://www.werkenbijmcdonalds.nl/vacatures/horecamedewerker-maastricht-95566e8a-ae87-45ef-bfd1-87198f79a543",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "blanche-dael-barista-koffiecafe-maastricht",
@@ -337,7 +353,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "hospitality"
     ],
-    "externalUrl": "https://www.blanchedael.nl/media/9f/94/c8/1770736463/Vacature%20Barista%20Koffiecafe%20BD.pdf?ts=1770736463"
+    "externalUrl": "https://www.blanchedael.nl/media/9f/94/c8/1770736463/Vacature%20Barista%20Koffiecafe%20BD.pdf?ts=1770736463",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "blanche-dael-winkelmedewerker-ambulant-weekend",
@@ -355,7 +372,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "retail"
     ],
-    "externalUrl": "https://www.blanchedael.nl/media/c8/9c/5a/1770971809/20260213%20Vacature%20winkelmedewerker%20ambulant.pdf?ts=1770971818"
+    "externalUrl": "https://www.blanchedael.nl/media/c8/9c/5a/1770971809/20260213%20Vacature%20winkelmedewerker%20ambulant.pdf?ts=1770971818",
+    "validThrough": "2026-03-13"
   },
   {
     "slug": "bakkerij-paulissen-verkoopmedewerker-nieuwe-winkel",
@@ -377,7 +395,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "retail"
     ],
-    "externalUrl": "https://werkenbij.bakkerijpaulissen.nl/vacature/verkoopmedewerker-maastricht"
+    "externalUrl": "https://werkenbij.bakkerijpaulissen.nl/vacature/verkoopmedewerker-maastricht",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "prosciutto-maastricht-bediening-afwashulp-bijbaan",
@@ -397,7 +416,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "hospitality"
     ],
-    "externalUrl": "https://prosciuttomaastricht.nl/vacatures/"
+    "externalUrl": "https://prosciuttomaastricht.nl/vacatures/",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "csu-weekend-schoonmaak-mumc-bijbaan",
@@ -419,7 +439,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "hospitality"
     ],
-    "externalUrl": "https://www.bijbaan.nl/vacatures/5601591-weekend-schoonmaak-medewerker"
+    "externalUrl": "https://www.bijbaan.nl/vacatures/5601591-weekend-schoonmaak-medewerker",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "nh-maastricht-student-waiter-flexibel",
@@ -437,7 +458,8 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "hospitality"
     ],
-    "externalUrl": "https://www.hotelprofessionals.nl/en/job/flexible-student-job-waiterwaitress-maastricht-169141"
+    "externalUrl": "https://www.hotelprofessionals.nl/en/job/flexible-student-job-waiterwaitress-maastricht-169141",
+    "validThrough": "2026-03-15"
   },
   {
     "slug": "omoda-maastricht-bijbaan-verkoopmedewerker",
@@ -455,6 +477,7 @@ export const NEW_JOBS: RawJob[] = [
     "categories": [
       "retail"
     ],
-    "externalUrl": "https://www.werkenbijomoda.nl/vacature/1907/bijbaan-verkoopmedewerker-maastricht"
+    "externalUrl": "https://www.werkenbijomoda.nl/vacature/1907/bijbaan-verkoopmedewerker-maastricht",
+    "validThrough": "2026-03-15"
   }
 ];
